@@ -103,23 +103,23 @@ class MetersGroup(object):
 
 
 class Logger(object):
-    def __init__(self, log_dir, use_tb=True, config='rl'):
+    def __init__(self, log_dir, use_tb=True, config='rl', args=None):
         self._log_dir = log_dir
         if use_tb:
             tb_dir = os.path.join(log_dir, 'tb')
             if os.path.exists(tb_dir):
                 shutil.rmtree(tb_dir)
+            # wandb.init(
+            # project="visualRL",
+            # sync_tensorboard=True,
+            # config=vars(args),
+            # name=log_dir)
             self._sw = SummaryWriter(tb_dir)
         else:
             self._sw = None
-        self._train_mg = MetersGroup(
-            os.path.join(log_dir, 'train.log'),
-            formating=FORMAT_CONFIG[config]['train']
-        )
-        self._eval_mg = MetersGroup(
-            os.path.join(log_dir, 'eval.log'),
-            formating=FORMAT_CONFIG[config]['eval']
-        )
+            
+        self._train_mg = MetersGroup(os.path.join(log_dir, 'train.log'), formating=FORMAT_CONFIG[config]['train'])
+        self._eval_mg = MetersGroup(os.path.join(log_dir, 'eval.log'), formating=FORMAT_CONFIG[config]['eval'])
 
     def _try_sw_log(self, key, value, step):
         if self._sw is not None:
@@ -147,6 +147,7 @@ class Logger(object):
             value = value.item()
         self._try_sw_log(key, value / n, step)
         mg = self._train_mg if key.startswith('train') else self._eval_mg
+        
         mg.log(key, value, n)
 
     def log_param(self, key, param, step):

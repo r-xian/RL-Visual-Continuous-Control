@@ -11,9 +11,10 @@ import time
 import os
 import json
 from pathlib import Path
+import wandb
 
 os.environ['MKL_SERVICE_FORCE_INTEL'] = '1'
-os.environ['MUJOCO_GL'] = 'egl'
+# os.environ['MUJOCO_GL'] = 'egl'
 
 torch.backends.cudnn.benchmark = True
 
@@ -84,7 +85,8 @@ def main():
     )
     
     # run
-    L = Logger(args.work_dir, use_tb=args.save_tb, config=args.agent)
+    
+    L = Logger(args.work_dir, use_tb=args.save_tb, config=args.agent, args=args)
 
     episode, episode_reward, done = 0, 0, True
     start_time = time.time()
