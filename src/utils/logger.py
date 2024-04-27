@@ -115,7 +115,6 @@ class Logger(object):
                 shutil.rmtree(tb_dir)
             wandb.init(
             project="visualRL",
-            sync_tensorboard=True,
             config=vars(args),
             name=log_dir)
             self._sw = SummaryWriter(tb_dir)

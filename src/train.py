@@ -40,9 +40,8 @@ def evaluate(env, agent, video, num_episodes, L, step, tag=None):
     return np.mean(episode_rewards)
 
 
-def main():
+def main(args=None):
     # prepare workspace
-    args = parse_args()
     set_seed_everywhere(args.seed)
     print("reading args: ", args)
     
@@ -100,7 +99,8 @@ def main():
     start_time = time.time()
     print("starting training")
     for step in range(args.num_train_steps+1):
-        print("global step: ", step)
+        if step % 100 == 0:
+            print("global step: ", step)
         # evaluate agent periodically
         if step > 0 and step % args.eval_freq == 0:
             print("evaluating agent")
@@ -153,6 +153,7 @@ def main():
 
 
             num_updates = 1 if step > args.init_steps else args.init_steps
+            # print("updating agent")
             for _ in range(num_updates):
                 agent.update(replay_buffer, L, step)
 
@@ -165,6 +166,12 @@ def main():
 
         obs = next_obs
         episode_step += 1
+    wandb.finish()
     
 if __name__ == '__main__':
-    main()
+    num_runs = 5
+    for run in range(num_runs):
+        args = parse_args()
+        args.tag = 'run_' + str(run)
+        main(args)
+        # use the same seed 
