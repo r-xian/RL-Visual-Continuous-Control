@@ -44,6 +44,7 @@ def main():
     # prepare workspace
     args = parse_args()
     set_seed_everywhere(args.seed)
+    print("reading args: ", args)
     
     ts = time.strftime("%m-%d", time.gmtime())    
     env_name = args.domain_name + '-' + args.task_name
@@ -52,31 +53,38 @@ def main():
     if args.tag:
         exp_name = exp_name + '-' + args.tag
     args.work_dir = args.work_dir + '/'  + exp_name
+    
+    print("making directories at: ", args.work_dir)
     make_dir(args.work_dir)
     video_dir = make_dir(os.path.join(args.work_dir, 'video'))
     model_dir = make_dir(os.path.join(args.work_dir, 'model'))
+    
     video = VideoRecorder(video_dir if args.save_video else None)
     
     with open(os.path.join(args.work_dir, 'args.json'), 'w') as f:
         json.dump(vars(args), f, sort_keys=True, indent=4)
     
+    
     # prepare env
+    print("making envs")
     env = make_envs(args)
     eval_env = make_envs(args)
 
     # prepare memory
+    print("intialized replay buffer storage")
     action_shape = env.action_space.shape
     agent_obs_shape = (3*args.frame_stack, args.agent_image_size, args.agent_image_size)
     env_obs_shape = (3*args.frame_stack, args.env_image_size, args.env_image_size)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
     replay_storage = ReplayBufferStorage(Path(args.work_dir) / 'buffer')
     replay_buffer = None
     
+    print("making model")
     model = make_model(agent_obs_shape, action_shape, args, device)
 
 
     # prepare agent
+    print("making agent")
     agent = make_agent(
         model=model,
         device=device,
@@ -85,16 +93,17 @@ def main():
     )
     
     # run
-    
+    print("creating logger")
     L = Logger(args.work_dir, use_tb=args.save_tb, config=args.agent, args=args)
 
     episode, episode_reward, done = 0, 0, True
     start_time = time.time()
-
+    print("starting training")
     for step in range(args.num_train_steps+1):
+        print("global step: ", step)
         # evaluate agent periodically
-
         if step > 0 and step % args.eval_freq == 0:
+            print("evaluating agent")
             L.log('eval/episode', episode, step)
             with torch.no_grad():
                 evaluate(eval_env, agent, video, args.num_eval_episodes, L, step)
@@ -119,6 +128,7 @@ def main():
                 L.log('train/episode', episode, step)
 
         # sample action for data collection
+        # initialising buffer
         if step < args.init_steps:
             action = env.action_space.sample()
         else:
@@ -128,6 +138,7 @@ def main():
         # run training update
         if step >= args.init_steps:
             if replay_buffer is None:
+                print("creating replay buffer")
                 replay_buffer = make_replay_buffer(replay_dir=Path(args.work_dir) / 'buffer',
                                                    max_size=args.replay_buffer_capacity,
                                                    batch_size=args.batch_size,
@@ -154,8 +165,6 @@ def main():
 
         obs = next_obs
         episode_step += 1
-
-
     
 if __name__ == '__main__':
     main()

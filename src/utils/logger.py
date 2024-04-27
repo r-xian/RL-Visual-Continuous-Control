@@ -8,6 +8,7 @@ import torchvision
 import numpy as np
 from termcolor import colored
 import copy
+import wandb
 
 FORMAT_CONFIG = {
     'sac': {
@@ -20,6 +21,7 @@ FORMAT_CONFIG = {
         'eval': [('step', 'S', 'int'), ('episode_reward', 'ER', 'float')]
     }
 }
+# how to format data for logging
 FORMAT_CONFIG['rad'] = copy.deepcopy(FORMAT_CONFIG['sac'])
 FORMAT_CONFIG['drq'] = copy.deepcopy(FORMAT_CONFIG['sac'])
 
@@ -46,6 +48,7 @@ class AverageMeter(object):
         return self._sum / max(1, self._count)
 
 
+# saving data to console and external file
 class MetersGroup(object):
     def __init__(self, file_name, formating):
         self._file_name = file_name
@@ -84,6 +87,7 @@ class MetersGroup(object):
             raise 'invalid format type: %s' % ty
         return template % (key, value)
 
+    # printing to console
     def _dump_to_console(self, data, prefix):
         prefix = colored(prefix, 'yellow' if prefix == 'train' else 'green')
         pieces = ['{:5}'.format(prefix)]
@@ -109,12 +113,15 @@ class Logger(object):
             tb_dir = os.path.join(log_dir, 'tb')
             if os.path.exists(tb_dir):
                 shutil.rmtree(tb_dir)
-            # wandb.init(
-            # project="visualRL",
-            # sync_tensorboard=True,
-            # config=vars(args),
-            # name=log_dir)
+            wandb.init(
+            project="visualRL",
+            sync_tensorboard=True,
+            config=vars(args),
+            name=log_dir)
             self._sw = SummaryWriter(tb_dir)
+            wandb.define_metric("global_step")
+            wandb.define_metric("train/*", step_metric="global_step")
+            wandb.define_metric("eval/*", step_metric="global_step")
         else:
             self._sw = None
             
@@ -124,28 +131,34 @@ class Logger(object):
     def _try_sw_log(self, key, value, step):
         if self._sw is not None:
             self._sw.add_scalar(key, value, step)
+            wandb.log({key: value, 'global_step': step})
 
     def _try_sw_log_image(self, key, image, step):
         if self._sw is not None:
             assert image.dim() == 3
             grid = torchvision.utils.make_grid(image.unsqueeze(1))
             self._sw.add_image(key, grid, step)
+            wandb.log({key: [wandb.Image(grid)], 'global_step': step})
 
     def _try_sw_log_video(self, key, frames, step):
         if self._sw is not None:
             frames = torch.from_numpy(np.array(frames))
             frames = frames.unsqueeze(0)
             self._sw.add_video(key, frames, step, fps=30)
+            wandb.log({key: wandb.Video(frames, fps=30), 'global_step': step})
 
     def _try_sw_log_histogram(self, key, histogram, step):
         if self._sw is not None:
             self._sw.add_histogram(key, histogram, step)
+            wandb.log({key: wandb.Histogram(histogram), 'global_step': step})
 
     def log(self, key, value, step, n=1):
         assert key.startswith('train') or key.startswith('eval')
         if type(value) == torch.Tensor:
             value = value.item()
+        # adds the new scalar heading to tensorboard
         self._try_sw_log(key, value / n, step)
+        
         mg = self._train_mg if key.startswith('train') else self._eval_mg
         
         mg.log(key, value, n)
