@@ -16,4 +16,5 @@ source $EBROOTMINICONDA3/etc/profile.d/conda.sh
 conda activate rl
 cd /home/s4642506/RL-Visual-Continuous-Control
 
-srun python ./src/train.py
+srun python ./src/train.py --agent curl
+# srun python ./src/test.py --agent sacae
