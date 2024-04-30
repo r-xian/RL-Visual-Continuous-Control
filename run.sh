@@ -22,9 +22,9 @@ srun python ./src/train.py --agent curl
 
 # --domain_name finger --task_name spin
 # --domain_name reacher --task_name easy
+# --domain_name walker --task_name walk
 # --domain_name cartpole --task_name swingup
 # --domain_name cheetah --task_name run
-# --domain_name walker --task_name walk
 # --domain_name ball_in_cup --task_name catch
 
 
