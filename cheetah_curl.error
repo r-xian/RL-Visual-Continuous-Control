@@ -1,0 +1,207 @@
+srun: ROUTE: split_hostlist: hl=bun005 tree_width 0
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+libEGL warning: egl: failed to create dri2 screen
+
+wandb: Currently logged in as: rodxiang2. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/s4642506/RL-Visual-Continuous-Control/wandb/run-20240520_134514-t58vi89y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_0
+wandb: ⭐️ View project at https://wandb.ai/rodxiang2/visualRL
+wandb: 🚀 View run at https://wandb.ai/rodxiang2/visualRL/runs/t58vi89y
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.028 MB of 0.028 MB uploadedwandb: | 0.028 MB of 0.028 MB uploadedwandb: / 0.028 MB of 0.087 MB uploadedwandb: - 0.028 MB of 0.087 MB uploadedwandb: \ 0.028 MB of 0.087 MB uploadedwandb: | 0.087 MB of 0.087 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:        eval/episode_reward ▁▁▃▂▂▃▄▄▅▅▄▅▂▄▂▂▅▅▇▆▆▆▆▆▄▇█▂▇▆▆▆▇▇▇▆▁▇▆▆
+wandb:                global_step ▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:         train/batch_reward ▁▁▁▁▁▁▁▁▁▂▂▃▃▄▄▄▄▄▅▅▅▅▅▆▆▇▇▇▇▇▆▆█▇▇▇█▇██
+wandb:            train/curl_loss █▇▅▄▄▄▄▃▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             train/duration ▁▆▆▆▅▅▆▆▆▆▆▆▆▅▅▅▅▅▅▅▅▅▅██▇▆█▇▇▇▇▇▇▇▇▇▆▆▆
+wandb:              train/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:       train/episode_reward ▁▂▂▃▂▃▄▄▂▅▅▄▅▅▇▆▇▇▄▄▇▇▇▆▆▆▇▅▇▅▇▅▇▇█▇▇██▇
+wandb:        train_actor/entropy ▆▇▇▇▇▆▇▆▆▅▆▆▇▇█▆▅▄▄▄▄▃▃▂▃▂▂▂▂▁▂▁▁▂▁▂▂▂▁▁
+wandb:           train_actor/loss ██████████████▇▇▆▆▅▅▅▄▄▄▄▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁
+wandb: train_actor/target_entropy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           train_alpha/loss ████████████▇▇▆▅▄▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_alpha/value █████████▇▇▇▇▇▆▅▄▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂
+wandb:          train_critic/loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▁▁▃▂▂▂▃▆▄▅▄▄▃█▅▂▂▃▃█▇▆▅▆
+wandb: 
+wandb: Run summary:
+wandb:               eval/episode 400.0
+wandb:        eval/episode_reward 313.74792
+wandb:                global_step 100000
+wandb:         train/batch_reward 0.82957
+wandb:            train/curl_loss 0.04016
+wandb:             train/duration 82.1103
+wandb:              train/episode 401.0
+wandb:       train/episode_reward 311.76051
+wandb:        train_actor/entropy 5.113
+wandb:           train_actor/loss -82.34354
+wandb: train_actor/target_entropy -6.0
+wandb:           train_alpha/loss -0.00918
+wandb:          train_alpha/value 0.02415
+wandb:          train_critic/loss 5.51938
+wandb: 
+wandb: 🚀 View run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_0 at: https://wandb.ai/rodxiang2/visualRL/runs/t58vi89y
+wandb: ⭐️ View project at: https://wandb.ai/rodxiang2/visualRL
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240520_134514-t58vi89y/logs
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/s4642506/RL-Visual-Continuous-Control/wandb/run-20240520_190359-op9rz4qg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_1
+wandb: ⭐️ View project at https://wandb.ai/rodxiang2/visualRL
+wandb: 🚀 View run at https://wandb.ai/rodxiang2/visualRL/runs/op9rz4qg
+wandb: - 0.028 MB of 0.028 MB uploadedwandb: \ 0.028 MB of 0.035 MB uploadedwandb: | 0.028 MB of 0.087 MB uploadedwandb: / 0.028 MB of 0.087 MB uploadedwandb: - 0.087 MB of 0.087 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:        eval/episode_reward ▁▁▄▂▅▅▆▅▅▆▆▆▇▆▇▆▆▆▇▃█▇███▇███▇█▇█▇▇█▇███
+wandb:                global_step ▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:         train/batch_reward ▁▁▁▁▁▁▁▁▁▂▂▃▃▄▄▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▆▇████▇███
+wandb:            train/curl_loss █▇▅▅▄▄▄▃▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             train/duration ▁█▇█▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇███▇▇▇▇▇▇▇▇█▇▇▇▇▇▇
+wandb:              train/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:       train/episode_reward ▁▂▄▂▂▄▅▅▅▆▆▆▅▅▅▆▆▆▅▅▇▇▇▇█▆▇▇▇▇▇▇█▇█▆▇▇▇▇
+wandb:        train_actor/entropy ▆█▇▇▇▇█▇▆▆▇▆█▇▆▅▅▄▄▄▃▃▃▂▂▂▂▂▁▁▂▁▂▁▁▂▂▁▁▂
+wandb:           train_actor/loss ██████████████▇▇▆▆▆▅▅▄▄▄▄▃▃▃▂▂▂▂▂▂▁▂▁▁▁▁
+wandb: train_actor/target_entropy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           train_alpha/loss ███████████▇▇▇▆▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_alpha/value █████████▇▇▇▇▇▆▅▅▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_critic/loss ▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▃▂▂▃▄▇▇▃▃▃▄▄▃▄▃▃▅▂▃▅▂█
+wandb: 
+wandb: Run summary:
+wandb:               eval/episode 400.0
+wandb:        eval/episode_reward 319.51108
+wandb:                global_step 100000
+wandb:         train/batch_reward 0.91531
+wandb:            train/curl_loss 0.01982
+wandb:             train/duration 76.97429
+wandb:              train/episode 401.0
+wandb:       train/episode_reward 291.5172
+wandb:        train_actor/entropy 4.7644
+wandb:           train_actor/loss -99.63018
+wandb: train_actor/target_entropy -6.0
+wandb:           train_alpha/loss -0.00391
+wandb:          train_alpha/value 0.01721
+wandb:          train_critic/loss 0.841
+wandb: 
+wandb: 🚀 View run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_1 at: https://wandb.ai/rodxiang2/visualRL/runs/op9rz4qg
+wandb: ⭐️ View project at: https://wandb.ai/rodxiang2/visualRL
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240520_190359-op9rz4qg/logs
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/s4642506/RL-Visual-Continuous-Control/wandb/run-20240521_000905-lq2i6q9h
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_2
+wandb: ⭐️ View project at https://wandb.ai/rodxiang2/visualRL
+wandb: 🚀 View run at https://wandb.ai/rodxiang2/visualRL/runs/lq2i6q9h
+wandb: - 0.027 MB of 0.038 MB uploadedwandb: \ 0.027 MB of 0.087 MB uploadedwandb: | 0.027 MB of 0.087 MB uploadedwandb: / 0.087 MB of 0.087 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:        eval/episode_reward ▁▁▃▃▃▄▂▁▃▅▅▂▅▃▅▂▅▆▅▆▆▇▆▆▅▆▇▆▇▇▇▅▇▇▇█████
+wandb:                global_step ▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:         train/batch_reward ▁▁▁▁▁▁▁▁▁▁▁▂▃▃▄▄▄▄▄▅▅▅▅▅▅▆▅▆▆▆▆▆▆▇▆▇▆▇▇█
+wandb:            train/curl_loss █▇▅▄▄▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             train/duration ▁███▇▇██████▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▇▇▇▇▇
+wandb:              train/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:       train/episode_reward ▁▁▂▂▃▃▂▂▄▃▃▅▆▅▅▅▂▆▆▅▆▆▆▇▇█▆▇▇▇▄▆▆▆▇▆▇▄█▆
+wandb:        train_actor/entropy ▆▆▆█▇▇█▇▇▆▇▇█▇▇▆▅▄▄▄▃▃▃▂▂▂▂▂▂▁▂▁▂▂▃▂▂▂▂▂
+wandb:           train_actor/loss ██████████████▇▇▇▆▆▅▅▅▄▄▃▃▃▃▂▂▂▂▂▂▂▁▂▁▁▁
+wandb: train_actor/target_entropy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           train_alpha/loss ████████████▇▇▆▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_alpha/value █████████▇▇▇▇▇▆▅▄▃▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂
+wandb:          train_critic/loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▂▃▂▂▃▃▃▂█▂▂▃▄▇▃▃▂▆▆▃▃
+wandb: 
+wandb: Run summary:
+wandb:               eval/episode 400.0
+wandb:        eval/episode_reward 383.25512
+wandb:                global_step 100000
+wandb:         train/batch_reward 0.99082
+wandb:            train/curl_loss 0.0326
+wandb:             train/duration 75.75996
+wandb:              train/episode 401.0
+wandb:       train/episode_reward 335.95266
+wandb:        train_actor/entropy 4.51839
+wandb:           train_actor/loss -98.98347
+wandb: train_actor/target_entropy -6.0
+wandb:           train_alpha/loss -0.02651
+wandb:          train_alpha/value 0.02773
+wandb:          train_critic/loss 4.59644
+wandb: 
+wandb: 🚀 View run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_2 at: https://wandb.ai/rodxiang2/visualRL/runs/lq2i6q9h
+wandb: ⭐️ View project at: https://wandb.ai/rodxiang2/visualRL
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240521_000905-lq2i6q9h/logs
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/s4642506/RL-Visual-Continuous-Control/wandb/run-20240521_051051-4csaxxhv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_3
+wandb: ⭐️ View project at https://wandb.ai/rodxiang2/visualRL
+wandb: 🚀 View run at https://wandb.ai/rodxiang2/visualRL/runs/4csaxxhv
+wandb: - 0.027 MB of 0.027 MB uploadedwandb: \ 0.027 MB of 0.038 MB uploadedwandb: | 0.027 MB of 0.087 MB uploadedwandb: / 0.027 MB of 0.087 MB uploadedwandb: - 0.087 MB of 0.087 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:               eval/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:        eval/episode_reward ▁▁▂▃▄▅▆▆▆▆▆▆▅▆▇▇▆▆▇▇▇▆▇▇▇▇▆█▆▄▂▇▅▃▇███▇█
+wandb:                global_step ▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:         train/batch_reward ▁▁▁▁▁▁▁▁▁▁▂▃▃▄▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇█▇▇███
+wandb:            train/curl_loss █▇▅▅▄▄▄▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             train/duration ▁████▇▇▇▇▇▇▇████████████████████████████
+wandb:              train/episode ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:       train/episode_reward ▁▂▂▃▄▄▅▆▅▅▆▆▆▆▆▅▆▆▆▆▆▆▆▅▆▇▇▇▃▇▃▆▇▇▆▇▇▇██
+wandb:        train_actor/entropy ▆█▇▇▇▆▇▆▆▅▅▆▇▆▆▆▄▄▄▃▂▂▂▂▂▂▁▁▁▁▁▁▂▂▂▂▁▁▂▂
+wandb:           train_actor/loss ██████████████▇▇▆▆▅▅▄▄▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: train_actor/target_entropy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           train_alpha/loss ████████████▇▇▆▅▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_alpha/value █████████▇▇▇▇▇▆▅▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          train_critic/loss ▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▃▂▃▅█▄▃▄▆▃▄▆▄▅▇▇▃▄▅▇
+wandb: 
+wandb: Run summary:
+wandb:               eval/episode 400.0
+wandb:        eval/episode_reward 285.31989
+wandb:                global_step 100000
+wandb:         train/batch_reward 0.87019
+wandb:            train/curl_loss 0.02129
+wandb:             train/duration 77.78446
+wandb:              train/episode 401.0
+wandb:       train/episode_reward 313.84739
+wandb:        train_actor/entropy 4.57828
+wandb:           train_actor/loss -87.1315
+wandb: train_actor/target_entropy -6.0
+wandb:           train_alpha/loss -0.00727
+wandb:          train_alpha/value 0.01604
+wandb:          train_critic/loss 1.22709
+wandb: 
+wandb: 🚀 View run ./log/cheetah-run-05-20-im100-b128-s1-curl-run_3 at: https://wandb.ai/rodxiang2/visualRL/runs/4csaxxhv
+wandb: ⭐️ View project at: https://wandb.ai/rodxiang2/visualRL
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240521_051051-4csaxxhv/logs
+wandb: wandb version 0.17.0 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/s4642506/RL-Visual-Continuous-Control/wandb/run-20240521_101527-61kr46rz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ./log/cheetah-run-05-21-im100-b128-s1-curl-run_4
+wandb: ⭐️ View project at https://wandb.ai/rodxiang2/visualRL
+wandb: 🚀 View run at https://wandb.ai/rodxiang2/visualRL/runs/61kr46rz

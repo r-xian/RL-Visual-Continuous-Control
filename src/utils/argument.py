@@ -21,14 +21,14 @@ def parse_args():
     parser.add_argument('--action_repeat', default=4, type=int)
     parser.add_argument('--frame_stack', default=3, type=int)
     # replay buffer
-    parser.add_argument('--replay_buffer_capacity', default=1000, type=int)
+    parser.add_argument('--replay_buffer_capacity', default=100000, type=int)
     # train
-    parser.add_argument('--init_steps', default=10, type=int)
-    parser.add_argument('--num_train_steps', default=1000, type=int)
+    parser.add_argument('--init_steps', default=1000, type=int)
+    parser.add_argument('--num_train_steps', default=100000, type=int)
     parser.add_argument('--batch_size', default=128, type=int)
     parser.add_argument('--hidden_dim', default=1024, type=int)
     # eval
-    parser.add_argument('--eval_freq', default=15, type=int)
+    parser.add_argument('--eval_freq', default=1000, type=int)
     parser.add_argument('--num_eval_episodes', default=10, type=int)
     # critic
     parser.add_argument('--critic_lr', default=1e-3, type=float)
@@ -84,10 +84,10 @@ def parse_args():
     parser.add_argument('--work_dir', default='./log', type=str)
     parser.add_argument('--save_tb', default=True, action='store_true')
     parser.add_argument('--save_buffer', default=False, action='store_true')
-    parser.add_argument('--save_video', default=True, action='store_true')
+    parser.add_argument('--save_video', default=False, action='store_true')
     parser.add_argument('--save_model', default=False, action='store_true')
     parser.add_argument('--detach_encoder', default=False, action='store_true')
-    parser.add_argument('--log_interval', default=5, type=int)
+    parser.add_argument('--log_interval', default=25, type=int)
     parser.add_argument('--tag', default='', type=str)
     args = parser.parse_args()
     
